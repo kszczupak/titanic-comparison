@@ -6,7 +6,7 @@ Library allows to compare Titanic passengers data from local source ('.csv' or '
 
 In order to test and build source files into wheel package:
 1. Download source files from github repo:
-`git clone TBD`
+`git clone https://github.com/kszczupak/titanic-comparison.git`
 2. Recreate virtual environment based on requirements.txt file
     * Create new clean venv enviroment:
     `python -m venv target_venv_path`
