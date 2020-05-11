@@ -1,0 +1,42 @@
+[
+  {
+    "datasetid": "titanic-passengers",
+    "recordid": "835634b93c8f759537a89daa01c3c3658e934617",
+    "fields": {
+      "fare": 13.0,
+      "name": "Collander, Mr. Erik Gustaf",
+      "embarked": "S",
+      "age": 28.0,
+      "parch": 0,
+      "pclass": 2,
+      "sex": "male",
+      "survived": "No",
+      "ticket": "248740",
+      "passengerid": 343,
+      "sibsp": 0,
+      "cabin": "F R73",
+      "additional_column": 1
+    },
+    "record_timestamp": "2016-09-21T00:34:51.313+02:00"
+  },
+  {
+    "datasetid": "titanic-passengers",
+    "recordid": "b762da1fa9f7f7765bc14006d9f5b8fc1d2d5177",
+    "fields": {
+      "fare": 7.8542000000000005,
+      "name": "Jensen, Mr. Hans Peder",
+      "embarked": "S",
+      "age": 20.0,
+      "parch": 0,
+      "pclass": 3,
+      "sex": "male",
+      "survived": "No",
+      "ticket": "350050",
+      "passengerid": 641,
+      "sibsp": 0,
+      "cabin": "F G73",
+      "additional_column": 2
+    },
+    "record_timestamp": "2016-09-21T00:34:51.313+02:00"
+  }
+]

@@ -1,0 +1,8 @@
+PassengerId;Survived;Pclass;Name;Sex;Age;SibSp;Parch;Ticket;Fare;Cabin;Embarked
+343;No;2;Collander, Mr. Erik Gustaf;male;28.0;0;0;248740;13.0;;S
+76;No;3;Moen, Mr. Sigurd Hansen;male;25.0;0;0;348123;7.65;F G73;S
+641;No;3;Jensen, Mr. Hans Peder;male;20.0;0;0;350050;7.8542000000000005;;S
+568;No;3;Palsson, Mrs. Nils (Alma Cornelia Berglund);female;29.0;0;4;349909;21.075;;S
+672;No;1;Davidson, Mr. Thornton;male;31.0;1;0;F.C. 12750;52.0;B71;S
+105;No;3;Gustafsson, Mr. Anders Vilhelm;male;37.0;2;0;3101276;7.525;;S
+576;No;3;Patchett, Mr. George;male;19.0;0;0;358585;14.5;;S

@@ -1,0 +1,130 @@
+[
+  {
+    "datasetid": "titanic-passengers",
+    "recordid": "835634b93c8f759537a89daa01c3c3658e934617",
+    "fields": {
+      "fare": 13.0,
+      "name": "Collander, Mr. Erik Gustaf",
+      "embarked": "S",
+      "age": 28.0,
+      "parch": 0,
+      "pclass": 1,  
+      "sex": "male",
+      "survived": "No",
+      "ticket": "248740",
+      "passengerid": 342,
+      "sibsp": 0
+    },
+    "record_timestamp": "2016-09-21T00:34:51.313+02:00"
+  },
+    {
+    "datasetid": "titanic-passengers",
+    "recordid": "5aa00b39a93376656528f1c7d929a297e31e1a20",
+    "fields": {
+      "fare": 52.0,
+      "name": "Davidson, Mr. Thornton",
+      "embarked": "S",
+      "age": 31.0,
+      "parch": 0,
+      "pclass": 1,
+      "sex": "male",
+      "survived": "No",
+      "sibsp": 1,
+      "passengerid": 672,
+      "ticket": "F.C. 12750",
+      "cabin": "B71"
+    },
+    "record_timestamp": "2016-09-21T00:34:51.313+02:00"
+  },
+  {
+    "datasetid": "titanic-passengers",
+    "recordid": "b762da1fa9f7f7765bc14006d9f5b8fc1d2d5177",
+    "fields": {
+      "fare": 7.8542000000000005,
+      "name": "Jensen, Mr. Hans Peder",
+      "embarked": "S",
+      "age": 60.0,
+      "parch": 0,
+      "pclass": 3,
+      "sex": "male",
+      "survived": "Yes",
+      "ticket": "350050",
+      "passengerid": 641,
+      "sibsp": 0
+    },
+    "record_timestamp": "2016-09-21T00:34:51.313+02:00"
+  },
+   {
+    "datasetid": "titanic-passengers",
+    "recordid": "dc455b086d203605705820911c0aaa98467bcd41",
+    "fields": {
+      "fare": 21.075,
+      "name": "Palsson, Mrs. Nils (Alma Cornelia Berglund)",
+      "embarked": "S",
+      "age": 29.0,
+      "parch": 4,
+      "pclass": 3,
+      "sex": "female",
+      "survived": "No",
+      "ticket": "349909",
+      "passengerid": 568,
+      "sibsp": 0
+    },
+    "record_timestamp": "2016-09-21T00:34:51.313+02:00"
+  },
+    {
+    "datasetid": "titanic-passengers",
+    "recordid": "97941a419e5cf6a4bb65147a7a21d7025c8a6e1b",
+    "fields": {
+      "fare": 7.65,
+      "name": "Moen, Mr. Sigurd Hansen",
+      "embarked": "S",
+      "age": 25.0,
+      "parch": 0,
+      "pclass": 3,
+      "sex": "male",
+      "survived": "No",
+      "sibsp": 0,
+      "passengerid": 76,
+      "ticket": "348123",
+      "cabin": "F G73"
+    },
+    "record_timestamp": "2016-09-21T00:34:51.313+02:00"
+  },
+    {
+    "datasetid": "titanic-passengers",
+    "recordid": "db095e3ef9e8623520d2ab2d1cea564df2035f75",
+    "fields": {
+      "fare": 14.5,
+      "name": "Patchett, Mr. George",
+      "embarked": "S",
+      "age": 19.0,
+      "parch": 0,
+      "pclass": 3,
+      "sex": "male",
+      "survived": "No",
+      "ticket": "358585",
+      "passengerid": 576,
+      "sibsp": 0
+    },
+    "record_timestamp": "2016-09-21T00:34:51.313+02:00"
+  },
+    {
+    "datasetid": "titanic-passengers",
+    "recordid": "aef92ddcfe100d3f0583aadd3f1d7c5aaa65cf2f",
+    "fields": {
+      "fare": 7.525,
+      "name": "Gustafsson, Mr. Anders Vilhelm",
+      "embarked": "S",
+      "age": 37.0,
+      "parch": 0,
+      "pclass": 3,
+      "sex": "male",
+      "survived": "No",
+      "ticket": "3101276",
+      "passengerid": 105,
+      "sibsp": 2
+    },
+    "record_timestamp": "2016-09-21T00:34:51.313+02:00"
+  }
+]
