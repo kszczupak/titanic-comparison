@@ -20,7 +20,7 @@ In order to test and build source files into wheel package:
 `python setup.py bdist_wheel`
 5. After successful execution, new '.whl' file should appear in project_root\dist folder.
 6. To install library in new environment:
-`pip install path_to_whl_file_generated_in_point_6` 
+`pip install path_to_whl_file_generated_in_step_4` 
 
 ### Usage
 Library contains two main classes:
