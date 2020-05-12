@@ -16,6 +16,7 @@ from os import path
 from io import StringIO
 from shutil import copyfileobj
 from datetime import datetime
+from collections import defaultdict
 
 import pandas as pd
 import numpy as np
@@ -131,6 +132,10 @@ class Compare:
         self._records_exactly_same = None
         self._records_with_differences = None  # only when using on columns
         self._differences = None
+
+        # used for storing indexes of locations with differences for a given column. Will be
+        # used to apply styling on those cells to generate nice excel table
+        self._idx_to_column_with_diff = defaultdict(set)
 
         self._perform_comparision()
 
@@ -291,8 +296,19 @@ class Compare:
             "differences_in_rows_with_common_key": self._differences
         }
 
-    def generate_comparision_summary(self):
-        pass
+    def export_results_to_excel(self, target_file_path: str) -> None:
+        """
+        Creates excel file with comparision data.
+        :param target_file_path: Path Excel file
+        """
+        with pd.ExcelWriter(target_file_path) as writer:
+            self._records_exactly_same.to_excel(writer, sheet_name="Common Records")
+            self._records_only_in_expected_df.to_excel(writer, sheet_name="Records Missing in Actual Data")
+            self._records_only_in_actual_df.to_excel(writer, sheet_name="Additional Records in Actual Data")
+
+            if self._on_columns:
+                styled_diffs = self._mark_differences()
+                styled_diffs.to_excel(writer, sheet_name="Records With Differences")
 
     def _perform_comparision(self) -> None:
         """
@@ -416,7 +432,7 @@ class Compare:
         records_with_differences = list()
         differences = list()
 
-        for _, row in records_in_both_df.iterrows():
+        for idx, (_, row) in enumerate(records_in_both_df.iterrows()):
             key = tuple(row[self._on_columns].values)
 
             expected_record = indexed_expected_df.loc[key]
@@ -448,6 +464,8 @@ class Compare:
                 diff = (*key, column, expected_value, actual_value)
                 differences.append(diff)
 
+                self._idx_to_column_with_diff[len(records_with_differences)].add(column)
+
             if records_identical:
                 identical_records.append(row)
             else:
@@ -478,15 +496,43 @@ class Compare:
             columns=[*self._on_columns, "Column with difference", "Expected", "Actual"]
         )
 
+    def _mark_differences(self):
+        """
+        Marks differences in self._records_with_differences (for visualization purposes)
+        """
+        row_idx = 0
 
-if __name__ == '__main__':
-    project_root = r"E:\MojePliki\Programy\luxoft-titanic"
+        def mark_cells(columns):
+            styles = list()
+            nonlocal row_idx
 
-    comp = Compare(
-        expected_data_path=fr"{project_root}\data\titanic-passengers.csv",
-        actual_data_url="https://public.opendatasoft.com/api/records/1.0/search/?dataset=titanic-passengers&q=&rows=900&facet=survived&facet=pclass&facet=sex&facet=age&facet=embarked",
-        columns=["Name", "Survived"],
-    )
+            columns_with_diff = self._idx_to_column_with_diff[row_idx]
 
-    comp.report(target_file_path="report.txt")
+            for column_name, _ in columns.items():
+                if column_name in self._columns_only_in_expected_df:
+                    # missing column, mark it as red
+                    styles.append("background-color: red")
+                    continue
 
+                if column_name in self._columns_only_in_actual_df:
+                    # additional column, mark it as green
+                    styles.append("background-color: green")
+                    continue
+
+                # search if given column contains difference for this row
+                column_has_diff = False
+                for column_with_diff in columns_with_diff:
+                    if column_name.startswith(column_with_diff):
+                        column_has_diff = True
+                        break
+
+                cell_style = "background-color: yellow" if column_has_diff else ""
+                styles.append(cell_style)
+
+            row_idx += 1
+            return styles
+
+        styled_df = self._records_with_differences.style
+        styled_df.apply(mark_cells, axis=1)
+
+        return styled_df

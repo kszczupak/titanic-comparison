@@ -44,8 +44,8 @@ in Compare object. For example:
 )`
 
 In this case, comparision in performed in one-to-one mode, which means that entire
-rows from actual data are compared to rows from expected data. In this mode, if given rows
-contains even small differences, it will treated as entirely different rows. For example, for
+rows from actual data are compared to rows from expected data. In this mode, if given row
+contains even small differences, it will be treated as a entirely different data. For example, for
 following data:
 
 Expected:
@@ -115,4 +115,11 @@ Statistics of the comparision, containing DataFrames with comparision data can b
 
 `
 cmp.get_statistic()
+`
+
+Results can be exported to Excel file, where differences are marked.
+To generate Excel file:
+
+`
+cmp.export_results_to_excel(excel_file_path)
 `

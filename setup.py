@@ -5,12 +5,14 @@ with open("README.md", "r") as fh:
 
 setup(
     name='luxoft-titanic',
-    version='0.1.3',
+    version='0.2.0',
     packages=find_packages(),
     python_requires='>=3.6',
     install_requires=[
        'pandas',
-       'requests'
+       'requests',
+        'Jinja2',
+        'openpyxl'
     ],
     url='',
     license='',
